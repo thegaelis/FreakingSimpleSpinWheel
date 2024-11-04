@@ -1,0 +1,328 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    height: 100%;
+    min-height: 700px;
+    width: 95%;
+    margin: 0;
+    background: linear-gradient(to right, #ff00cc, #333399);
+}
+
+.title {
+    align-content: center;
+    font-size: 40pt;
+    text-align: center;
+    vertical-align: text-top;
+    color: white;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.button {
+    margin-top: 30px;
+    transform: translate(-50%,-80%);
+    font-family: 'Varela Round', sans-serif;
+    font-size: 3vw;
+    letter-spacing: 0.1em;
+    color: #e8e8e8;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: linear-gradient(30deg,#d350db,teal,#d350db);
+    background-size: 200% 200%;
+    box-shadow: 1vw 1vw 0 lightcoral;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 80px;
+}
+
+.button:hover {
+    animation: gradient 5s ease infinite;
+    font-size: 3.5vw;
+    box-shadow: 0.2vw 0.2vw 0 lightcoral;
+}
+
+@keyframes gradient {
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+.button-disabled {
+    width: 80px;
+    opacity: 0.65 !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+    filter: alpha(opacity=65);
+    box-shadow: none;
+    margin-top: 30px;
+    transform: translate(-50%,-80%);
+    font-family: 'Varela Round', sans-serif;
+    font-size: 3vw;
+    letter-spacing: 0.1em;
+    color: darkblue;
+    border: none;
+    border-radius: 10px;
+    border-color: blue;
+}
+
+.button-default {
+    cursor: pointer !important;
+    border-radius: 10px !important;
+    font-size: 18px !important;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .4) !important;
+}
+
+.button-default:hover {
+    background: #328af6 !important;
+}
+
+.label-default {
+    font-size: 20px;
+    width: 100%;
+    padding: 10px;
+}
+
+.label-highlight {
+    font-size: 26px;
+    font-style: italic;
+    width: 100%;
+    color: blue;
+    background-color: darkgrey;
+}
+
+.tablist {
+    line-height: 30px;
+    color: brown;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4vw;
+    max-width: auto;
+}
+
+/* Wheel Container */
+.wheel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wheel-wrapper {
+    position: relative;
+}
+
+#wheel {
+    border: 0.5vw solid #333;
+    border-radius: 50%;
+    max-width: 100%;
+    height: 100%;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    right: -2.5vw; /* Adjust as needed */
+    transform: translateY(-50%); /* Center vertically */
+    width: 4vw; /* Adjust the width of the arrow */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1; /* Ensure the arrow is above the wheel */
+}
+
+/* Names Container */
+.names-container {
+    margin: 1vh;
+    flex: 1;
+    max-width: 30vw;
+    display: flex;
+    flex-direction: column;
+    height: 50vh; /* Match the height of the wheel */
+}
+.names-container h2 {
+    margin-bottom: 1vh;
+    font-size: 3vh;
+}
+
+.input-group {
+    display: flex;
+    gap: 1vw;
+    margin-bottom: 1vh;
+}
+
+.input-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1vh;
+}
+
+textarea {
+    width: 15vw;
+    height: 30vh;
+    resize: none;
+    margin-right: 2vw;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1vh;
+}
+
+.right-section label {
+    margin-bottom: 0.5vh;
+}
+
+.right-section input {
+    margin-bottom: 1vh;
+    width: 10vw;
+}
+
+.right-section button {
+    margin-bottom: 1vh;
+    width: 12vw;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Split into 2 columns */
+}
+
+#allowDuplicate {
+    margin-right: 0.5vw;
+}
+
+.radio-group {
+    margin-bottom: 1vh; /* Add space below the radio group */
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 10vw; /* Width for inputs */
+    padding: 1vh; /* Padding */
+    border: 0.2vw solid #4CAF50; /* Border color */
+    border-radius: 0.5vw; /* Border radius */
+    font-size: 1.6vh; /* Font size */
+    margin: 0.5vh;
+    transition: border-color 0.2s ease-in-out; /* Transition for border color */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #2E7D32; /* Border color on focus */
+}
+
+/* Button Styles */
+button {
+    margin: 0.5vh;
+    padding: 1vh 1.5vw;
+    background: linear-gradient(30deg, #d350db, teal, #d350db);
+    color: white;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    font-size: 2.0vh;
+}
+
+button:hover {
+    box-shadow: 0.2vw 0.2vw 0 lightcoral;
+}
+
+/* Reset Button Style */
+#resetBtn {
+    background: #f44336 !important;
+}
+
+#resetBtn:hover {
+    background: #d32f2f;
+}
+
+/* Spin button styles */
+#spinBtn {
+    position: absolute; /* Position modal absolutely within wheel-wrapper */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Precisely center */
+    width: 25vh; /* Modal width */
+    height: 25vh; /* Modal height */
+    background: linear-gradient(30deg, #2553a4, rgb(20, 105, 203), #50cbdb);
+    border-radius: 50%;
+    font-size: 7.5vh;
+    font-weight: bold;
+}
+
+/* Modal Styles */
+#modal {
+    display: none; /* Hide modal by default */
+    position: absolute; /* Position modal absolutely within wheel-wrapper */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Precisely center */
+    width: 25vw; /* Modal width */
+    height: 22vh; /* Modal height */
+    background-color: white; /* Modal background color */
+    border: 0.1vw solid #ccc; /* Border for modal */
+    border-radius: 0.5vw; /* Border radius */
+    box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2); /* Shadow for modal */
+    z-index: 1000; /* Ensure modal is on top */
+}
+
+#modalContent {
+    text-align: center; /* Center content */
+}
+
+#modalResult {
+    transition: opacity 1s ease-in-out; /* Transition for opacity */
+}
+
+#modalResult h2 {
+    margin-block-start: 0px;
+    margin-block-end: 0px; 
+}
+
+.modal-button {
+    margin: 0.5vh;
+    padding: 0.5vh;
+    font-size: 2.0vh;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .names-container {
+        width: 100%;
+        max-width: none;
+    }
+
+    .wheel-wrapper {
+        width: 100%;
+        max-width: 30vw;
+    }
+
+    #wheel {
+        width: 100%;
+        height: auto;
+    }
+
+    .arrow {
+        right: -2vw;
+        border-top: 1.5vh solid transparent;
+        border-bottom: 1.5vh solid transparent;
+        border-left: 3vw solid red;
+    }
+}

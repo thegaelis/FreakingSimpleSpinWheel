@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Spin Wheel</title>
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="resources/style.css" />
+</head>
+
+<body style="background: linear-gradient(to right, #ff00cc, #333399); background-repeat:no-repeat; background-size:cover; background-blend-mode:screen; height: 100vh; margin: 0;">
+    <div id="wrapper" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <table style="width: 100%; text-align: center; margin: 30px;">
+            <tr>
+                <td style="align-content: center; width: 100%; text-align: center" colspan="2">
+                    <p class="title">
+                        This is freaking simple spin wheel !!!
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <div class="main-container">
+            <div class="wheel-container">
+                <div class="wheel-wrapper">
+                    <canvas id="wheel" width="600" height="600"></canvas>
+                    <img class="arrow" aria-hidden="true" src="./resources/left_arrow.png"></img>
+                    <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modalResult">
+                        <div id="modalContent">
+                            <h2 id="modalResult"></h2>
+                            <button id="closeModal" class="modal-button" aria-label="Close">Close</button>
+                            <button id="removeResult" class="modal-button" aria-label="Remove from List">Remove</button>
+                            <button id="removeDuplicateResult" class="modal-button" aria-label="Remove all duplicate">Remove All</button>
+                        </div>
+                    </div>
+                    <button id="spinBtn" aria-label="Spin the Wheel" type="button">Spin</button>
+                </div>
+            </div>
+
+            <div class="names-container">
+                <h2 style="color: white">Names List</h2>
+                <div class="input-section">
+                    <textarea id="namesInput" rows="10" placeholder="Enter items line by line" aria-label="Enter names line by line"></textarea>
+
+                    <div class="right-section">
+                        <input id="prefixInput" type="text" placeholder="Prefix">
+                        <input id="startInput" type="number" placeholder="Start">
+                        <input id="endInput" type="number" placeholder="End">
+                        <button id="duplicateBtn">Duplicate</button>
+                        <button id="setBtn">Set</button>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button id="resetBtn">Reset</button>
+                    <button id="shuffleBtn">Shuffle</button>
+                    <button id="sortBtn">Sort</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./resources/script.js"></script>
+</body>
+
+</html>
